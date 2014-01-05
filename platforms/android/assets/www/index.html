@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>First Baptist Church of Villa Rica</title>
+<!--
+    // Create CSS layer for displaying maps on mobile devices
+-->
+    <style type="text/css">
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+<!--
+    //Identify the device whether android or ios
+-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    <script src="js/showPage.js"></script>
+    <script src="js/tellSomeOne.js"></script>
+
+    <!-- Required to over-ride PhoneGap / jQuery-Mobile issue with google maps api -->
+    <style>
+
+        #bgImg{
+            padding: 0;
+            position: absolute !important;
+            top: 0px !important;
+            right: 0;
+            bottom: 0px !important;
+            left: 0 !important;
+
+            background: url('img/church_hours.jpg') no-repeat center center;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
+        }
+
+        #map-content{
+            padding: 0;
+            position: absolute !important;
+            top: 110px !important;
+            right: 0;
+            bottom: 40px !important;
+            left: 0 !important;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div data-role="page" id="home" data-theme="b">
+        <div data-role="header" data-position="fixed" class="sharedHeader"></div>
+        <div data-role="content">
+            <!-- Content info -->
+            <div data-page="info">
+                <fieldset id="formSystemInformation" style="border: 1px black solid; padding: 0.2em 0.8em ">
+                    <legend align="left" style="border: 1px black solid; margin-left: 1em; padding: 0.2em 0.8em "><font size="6">System Information</font></legend>
+                    <table style="padding-right: 5px;">
+                        <tr>
+                            <td style="text-align: right"><font size="6">Platform: </font></td>
+                            <td style="text-align: left"><font size="6"><label id="dPlatform" name="dPlatform"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">Version: </font></td>
+                            <td style="text-align: left"><font size="6"><label id="dVersion" name="dVersion"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">UUID:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="dUUID" name="dUUID"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">Name:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="dName" name="dName"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">H x W:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="dHeight" name="dHeight"></label> X <label id="dWidth" name="dWidth"></label></td>
+                        </tr>
+                        <tr height="50px">
+                            <td style="text-align: right"><font size="6"></font></td>
+                            <td style="text-align: left"><font size="6"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">Latitude:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="dLat" name="dLat"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">Longitude:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="dLong" name="dLong"></label></td>
+                        </tr>
+                        <tr height="50px">
+                            <td style="text-align: right"><font size="6"></font></td>
+                            <td style="text-align: left"><font size="6"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">State:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="geoState" name="geoState"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">County:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="geoCounty" name="geoCounty"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">City:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="geoCity" name="geoCity"></label></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6">Postal:</font></td>
+                            <td style="text-align: left"><font size="6"><label id="geoPostal" name="geoPostal"></label></td>
+                        </tr>
+
+                        <tr height="50px">
+                            <td style="text-align: right"><font size="6"></font></td>
+                            <td style="text-align: left"><font size="6"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right"><font size="6"></font></td>
+                            <td style="text-align: left"><font size="6"><a href="mailto:ericdecoff@gmail.com?subject='Passion City Church Android Project'&body='More Information'">Request more information</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+            </div>
+            <!-- Content Home -->
+            <div data-page="home">
+                <div id="bgImg">
+
+                </div>
+
+            </div>
+            <!-- Content Share -->
+            <div data-page="share" data-role="controlgroup">
+                <p>
+                    <ul>
+                        <li>
+                            <a onclick="tellSomeone('Hey check this out...','First Baptist Church of Villa Rica http://fbcvr.com')">Hey Check this out</a>
+                        </li>
+                        <li>
+                            <a onclick="tellSomeone('Are you coming Sunday','First Baptist Church of Villa Rica http://fbcvr.com')">Are you coming sunday</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" class="sharedFooter"></div>
+    </div>
+<!--
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+-->
+    <script type="text/javascript" src="js/reachability.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+<!--
+<script type="text/javascript">
+
+    var geocoder = new google.maps.Geocoder();
+
+    var address = '1483 Hwy 78 W, Villa Rica, GA';
+    geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+            alert(' lat: '+ results[0].geometry.location.lat()+ '\n lng: ' + results[0].geometry.location.lng());
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+
+    //Google maps API initialisation
+    var element = document.getElementById("map");
+
+    //Define the properties of the OSM map to be displayed
+    var map = new google.maps.Map(element, {
+        center: new google.maps.LatLng(33.7334754, -84.9582768),
+        zoom: 14,
+//        mapTypeId: "OSM",
+        mapTypeControl: false,
+        streetViewControl: false
+    });
+
+
+    //Define OSM map type pointing at the OpenStreetMap tile server
+    /*
+    map.mapTypes.set("OSM", new google.maps.ImageMapType({
+        getTileUrl: function(coord, zoom) {
+            return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+        },
+        tileSize: new google.maps.Size(256, 256),
+        name: "OpenStreetMap",
+        maxZoom: 18
+    }));
+    */
+</script>
+-->
+</body>
+</html>

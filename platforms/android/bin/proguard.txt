@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.ericdecoff.phonegap3.FBCVR.FBCFR { <init>(...); }
+
