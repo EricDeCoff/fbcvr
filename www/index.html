@@ -1,214 +1,142 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>First Baptist Church of Villa Rica</title>
-<!--
-    // Create CSS layer for displaying maps on mobile devices
--->
-    <style type="text/css">
-        html, body, #map {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>FBCVR - First Baptist Church of Villa Rica</title>
+      
+    <!-- jQuery-Mobile CSS -->
+    <!-- removed 
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0.min.css" />
+    -->
+      
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bs3/css/bootstrap.min.css" rel="stylesheet">
+      
+    <!--Font-Awesome -->
+    <link rel="stylesheet" href="./fa/css/font-awesome.css">
+      
+    <!-- Custom styles for this template -->
+    <link href="./navbar-fixed-top.css" rel="stylesheet">
+
+    <!-- Great Vibes -->
+    <link href="./fonts/Great_Vibes.css" rel="stylesheet">      
+    <style>
+        .well{
+            padding-top: 15px;
         }
-    </style>
-<!--
-    //Identify the device whether android or ios
--->
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+        .lead{
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 800;
+            font-size: 48px;
+            line-height: 0.8;
+            font-family: "Great Vibes", "Helvetica Neue", sans-serif;
+        }
+        .lead-min{
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1;
+            font-family: "Great Vibes", "Helvetica Neue", sans-serif;
+        }
+        .half-height-line{
+            line-height: 0.5;
+        }
+        .inline-hidden-xs { 
+            display: inline !important; 
+        }
+        .inline-visible-ld{
+            display: none ! important;
+        }
+            
+        @media screen and (orientation: portrait){
+            .landscape{
+                display: none ! important;
+            }
+            .portrait{
+                display: inline ! important;
+            }
+            .portrait-xs{
+                display: inline ! important;
+            }
+        }
+        
+        @media screen and (orientation: landscape){
+            .landscape{
+                display: inline ! important;
+            }
+            .portrait{
+                display: none ! important;
+            }
+            .portrait-xs{
+                display: none  ! important;
+            }
+        }
+        /* iPads */
+        @media screen and (min-width: 768px) and (max-width: 9999px){
+            body{
+                padding-top: 100px;
+            }
+            .well {
+                padding-top: 30px;
+            }
+            .lead {
+                font-size: 96px;
+            }
+            h3 {
+                font-size: 48px;
+            }
+            td {
+                font-size: 28px;
+                -webkit-text-size-adjust: 100%;
 
+            }
+            .inline-hidden-ld{
+                display: none ! important;
+            }
+            .portrait-xs{
+                display: none ! important;
+            }
+           .inline-visible-ld{
+                display: inline ! important;
+            }
+        }
+  </style>
+  </head>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script src="webintent.js"></script>
-    <script src="intelxdk.js" type="text/javascript"></script>
+  <body>
+      <div id="navbar-top"></div>
+      <div class="container">
+          <div id="home" data-page='home'></div>
+          <div id="about" data-page='about' style="disply: none"></div>
+      </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->      
 
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-    <script src="vendor/jquery-1.10.2.min.js"></script>
+    <script src="./vendor/jquery-2.1.0.min.js"></script>
+    <script src="./bs3/js/bootstrap.min.js"></script>          
+<!--      
     <script src="vendor/jquery.mobile-1.4.0.min.js"></script>
-    <script src="js/showPage.js"></script>
-    <script src="js/tellSomeOne.js"></script>
-    <script src="js/getDirections.js"></script>
-    <!-- Required to over-ride PhoneGap / jQuery-Mobile issue with google maps api -->
-    <style>
+-->      
+    <script src="./js/fastclick.js"></script>
 
-        #bgImg{
-            padding: 0;
-            position: absolute !important;
-            top: 0px !important;
-            right: 0;
-            bottom: 0px !important;
-            left: 0 !important;
-
-            background: url('img/church_hours.jpg') no-repeat center center;
-            -webkit-background-size: 100%;
-            -moz-background-size: 100%;
-            -o-background-size: 100%;
-            background-size: 100%;
-        }
-
-        #map-content{
-            padding: 0;
-            position: absolute !important;
-            top: 110px !important;
-            right: 0;
-            bottom: 40px !important;
-            left: 0 !important;
-        }
-    </style>
-
-</head>
-<body>
-
-    <div data-role="page" id="home" data-theme="b">
-        <div data-role="header" data-position="fixed" class="sharedHeader"></div>
-        <div data-role="content">
-            <!-- Content info -->
-            <div data-page="info">
-                <fieldset id="formSystemInformation" style="border: 1px black solid; padding: 0.2em 0.8em ">
-                    <legend align="left" style="border: 1px black solid; margin-left: 1em; padding: 0.2em 0.8em "><font size="6">System Information</font></legend>
-                    <table style="padding-right: 5px;">
-                        <tr>
-                            <td style="text-align: right"><font size="6">Platform: </font></td>
-                            <td style="text-align: left"><font size="6"><label id="dPlatform" name="dPlatform"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">Version: </font></td>
-                            <td style="text-align: left"><font size="6"><label id="dVersion" name="dVersion"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">UUID:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="dUUID" name="dUUID"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">Name:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="dName" name="dName"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">H x W:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="dHeight" name="dHeight"></label> X <label id="dWidth" name="dWidth"></label></td>
-                        </tr>
-                        <tr height="50px">
-                            <td style="text-align: right"><font size="6"></font></td>
-                            <td style="text-align: left"><font size="6"></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">Latitude:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="dLat" name="dLat"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">Longitude:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="dLong" name="dLong"></label></td>
-                        </tr>
-                        <tr height="50px">
-                            <td style="text-align: right"><font size="6"></font></td>
-                            <td style="text-align: left"><font size="6"></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">State:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="geoState" name="geoState"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">County:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="geoCounty" name="geoCounty"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">City:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="geoCity" name="geoCity"></label></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6">Postal:</font></td>
-                            <td style="text-align: left"><font size="6"><label id="geoPostal" name="geoPostal"></label></td>
-                        </tr>
-
-                        <tr height="50px">
-                            <td style="text-align: right"><font size="6"></font></td>
-                            <td style="text-align: left"><font size="6"></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right"><font size="6"></font></td>
-                            <td style="text-align: left"><font size="6"><a href="mailto:ericdecoff@gmail.com?subject='Passion City Church Android Project'&body='More Information'">Request more information</a></td>
-                        </tr>
-                    </table>
-                </fieldset>
-
-            </div>
-            <!-- Content Home -->
-            <div data-page="home">
-                <div id="bgImg">
-
-                </div>
-
-            </div>
-            <!-- Content Share -->
-            <div data-page="share" data-role="controlgroup">
-                <a class="ui-btn ui-corner-all" 
-                    onclick="tellSomeone('Hey check this out...','First Baptist Church of Villa Rica http://fbcvr.com')">
-                        Hey Check this out</a>
-                <a class="ui-btn ui-corner-all" 
-                    onclick="tellSomeone('Are you coming Sunday','First Baptist Church of Villa Rica http://fbcvr.com')">
-                        Are you coming sunday</a>
-            </div>
-        </div>
-        <div data-role="footer" data-position="fixed" class="sharedFooter"></div>
-    </div>
-<!--
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript">
-    app.initialize();
-</script>
--->
-    <script type="text/javascript" src="js/reachability.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="./phonegap.js"></script>
+    <script type="text/javascript" src="./app/app.js"></script>
     <script type="text/javascript">
         app.initialize();
     </script>
-<!--
-<script type="text/javascript">
-
-    var geocoder = new google.maps.Geocoder();
-
-    var address = '1483 Hwy 78 W, Villa Rica, GA';
-    geocoder.geocode( { 'address': address}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
-            alert(' lat: '+ results[0].geometry.location.lat()+ '\n lng: ' + results[0].geometry.location.lng());
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
-    });
-
-    //Google maps API initialisation
-    var element = document.getElementById("map");
-
-    //Define the properties of the OSM map to be displayed
-    var map = new google.maps.Map(element, {
-        center: new google.maps.LatLng(33.7334754, -84.9582768),
-        zoom: 14,
-//        mapTypeId: "OSM",
-        mapTypeControl: false,
-        streetViewControl: false
-    });
-
-
-    //Define OSM map type pointing at the OpenStreetMap tile server
-    /*
-    map.mapTypes.set("OSM", new google.maps.ImageMapType({
-        getTileUrl: function(coord, zoom) {
-            return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
-        },
-        tileSize: new google.maps.Size(256, 256),
-        name: "OpenStreetMap",
-        maxZoom: 18
-    }));
-    */
-</script>
--->
+      
 </body>
 </html>
