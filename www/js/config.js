@@ -9,7 +9,7 @@ require.config({
         "jquery":"libs/jquery-2.1.1.min",
         "underscore":"libs/underscore.min",
         "fastclick":"libs/fastclick",
-        "bootstrap":"../bs3/js/bootstrap.min"
+        "bootstrap":"libs/bootstrap.min"
     },
     shim: {
         "underscore": {
