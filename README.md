@@ -9,4 +9,8 @@
 * jQuery
 * HTML-5
 * CSS-3
-* javascript
+* RequireJS
+
+* Google API
+* Google Fonts
+
