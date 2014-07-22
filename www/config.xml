@@ -40,17 +40,13 @@
     <!-- Plugins can also be added here. -->
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <!--
-        <gap:plugin name="Example" />
-        A list of available plugins are available at https://build.phonegap.com/docs/plugins
-    -->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" /> <!-- 512 x 512 -->
-    <icon src="res/android/res/drawable-ldpi/appicon.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="res/android/res/drawable-mdpi/appicon.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="res/android/res/drawable-hdpi/appicon.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="res/android/res/drawable-xdpi/appicon.png"  gap:platform="android"    gap:density="xhdpi" />
+    <icon src="res/android/drawable-ldpi/icon.png"   gap:platform="android"    gap:density="ldpi" />
+    <icon src="res/android/drawable-mdpi/icon.png"   gap:platform="android"    gap:density="mdpi" />
+    <icon src="res/android/drawable-hdpi/icon.png"   gap:platform="android"    gap:density="hdpi" />
+    <icon src="res/android/drawable-xdpi/icon.png"  gap:platform="android"    gap:density="xhdpi" />
     <!--
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
