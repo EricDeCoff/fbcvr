@@ -1,67 +1,82 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget xmlns="http://www.w3.org/ns/widgets" 
-        xmlns:gap="http://phonegap.com/ns/1.0"
-        id="com.ericdecoff.cordova.requirejs.fbcvr" 
-        versionCode="350" 
-        version="3.5.0" >
-    
+<?xml version="1.0" encoding="UTF-8"?>
+    <widget xmlns = "http://www.w3.org/ns/widgets" 
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+		id = "com.ericdecoff.requirejs.FBCVR"
+		version = "3.5.0"
+		versionCode = "350">
+
     <name>FBCVR</name>
-    
+
     <description>
         First Baptist Church of Villa Rica
     </description>
-    
-    <author href="http://fbcvr.com"
-            email="ericdecoff@gmail.com">Eric DeCoff
-    </author>
-    
-    <!-- Define app icon for each platform. -->
-    <icon src="icon.png" /> <!-- 512 x 512 -->
-    <icon src="res/android/ldpi/icon.png"   gap:platform="android"    gap:density="ldpi" 
-          height="36" width="36" />
-    <icon src="res/android/mdpi/icon.png"   gap:platform="android"    gap:density="mdpi" 
-          height="48" width="48"/>
-    <icon src="res/android/hdpi/icon.png"   gap:platform="android"    gap:density="hdpi" 
-          height="72" width="72"/>
-    <icon src="res/android/xdpi/icon.png"  gap:platform="android"    gap:density="xhdpi" 
-          height="96" width="96"/>
-    <!--
-    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
-    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
-    <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
-    <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
-    <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
-    <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
-    <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
-    <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
-    <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
-    -->
 
-    <!-- Define app splash screen for each platform. -->
-    <!--
-    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
-    <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
-    -->
+    <author href="http://fbcvr.com" email="ericdecoff@gmail.com">Eric DeCoff</author>
+        
+    <!-- ICONS -->
+        
+    <icon src="icon.png" /> <!-- default 512 pixels -->
     
+    <!-- iOS6 --->
+    <icon src="img/icons/ios/icon57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="img/icons/ios/icon72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="img/icons/ios/icon114.png" gap:platform="ios" width="114" height="114" />
+    <icon src="img/icons/ios/icon144.png" gap:platform="ios" width="144" height="144" />    
+    <!-- iOS7 -->
+    <icon src="img/icons/ios/icon76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="img/icons/ios/icon120.png" gap:platform="ios" width="120" height="120" />
+    <icon src="img/icons/ios/icon152.png" gap:platform="ios" width="152" height="152" />
+        
+    <icon src="res/android/ldpi/icon.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="res/android/mdpi/icon.png" gap:platform="android" gap:density="mdpi" /> 
+    <icon src="res/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="res/android/xhdpi/icon.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="res/android/xxhdpi/icon.png" gap:platform="android" gap:density="xxhdpi" /> 
+    <icon src="res/android/xxxhdpi/icon.png" gap:platform="android" gap:density="xxxhdpi" />
+        
+    <icon src="img/icons/winphone/icon.png" gap:platform="winphone" />
+    <icon src="img/icons/winphone/tileicon.png" gap:platform="winphone" gap:role="background" />
+        
+    <!-- SPLASH SCREENS -->
+        
+    <gap:splash src="splash.png" />
+    
+    <!-- non retina -->
+    <gap:splash src="img/splash/ios/splash320x480.png" gap:platform="ios" width="320" height="480" />
+    <!-- retina 4 -->
+    <gap:splash src="img/splash/ios/splash640x960.png" gap:platform="ios" width="640" height="960" />
+    <!-- retina 5+ -->
+    <gap:splash src="img/splash/ios/splash640x1136.png" gap:platform="ios" width="640" height="1136" />
+        
+    <!-- iPad non retina -->    
+    <gap:splash src="img/splash/ios/splash1024x768.png" gap:platform="ios" width="1024" height="768" />
+    <gap:splash src="img/splash/ios/splash768x1024.png" gap:platform="ios" width="768" height="1024" />
+    <!-- iPad Retina -->
+    <gap:splash src="img/splash/ios/splash2048x1496.png" gap:platform="ios" width="2048" height="1496" />
+    <gap:splash src="img/splash/ios/splash1536x2008.png" gap:platform="ios" width="1536" height="2008" />
+        
+    <!-- android splash -->    
+    <!-- 200x320 -->        
+    <gap:splash src="img/splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" /> 
+    <!-- 320x480 -->    
+    <gap:splash src="img/splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <!-- 480x800 -->        
+    <gap:splash src="img/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <!-- 720x1280 -->        
+    <gap:splash src="img/splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" /> 
+        
+    <!-- Windows Phone 7 480x800 -->
+    <gap:splash src="img/splash/winphone/splash.jpg" gap:platform="winphone" /> 
+
     <!-- PLATFORM SELECTION -->
+
+    <gap:platform name="ios" />
     <gap:platform name="android" />
-
-    <!-- Plugins can also be added here. -->
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-
+    <gap:platform name="winphone" />
+        
     <!-- GENERAL PREFERENCES -->
         
-    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="phonegap-version" value="3.1.0" />
     <preference name="orientation" value="default" />
     <preference name="fullscreen" value="true" /> <!-- remove the upper bar on iOS and Android -->
         
@@ -88,6 +103,21 @@
     <preference name="splash-screen-duration" value="5000" />
 
     <preference name="load-url-timeout" value="20000" />
-    
+        
+    <!-- PHONEGAP API FEATURES PREFERENCES -->
+        
+    <preference name="permissions" value="none"/>
+    <!--
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/contacts"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+    -->
+
     <access origin="*" />
+
 </widget>
