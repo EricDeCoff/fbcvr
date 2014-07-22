@@ -57,13 +57,13 @@
         
     <!-- android splash -->    
     <!-- 200x320 -->        
-    <gap:splash src="img/splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" /> 
+    <gap:splash src="res/android/res-long-port-ldpi/default.png" gap:platform="android" gap:density="ldpi" /> 
     <!-- 320x480 -->    
-    <gap:splash src="img/splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="res/android/res-long-port-mdpi/default.png" gap:platform="android" gap:density="mdpi" />
     <!-- 480x800 -->        
-    <gap:splash src="img/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="res/android/res-long-port-hdpi/default.png" gap:platform="android" gap:density="hdpi" />
     <!-- 720x1280 -->        
-    <gap:splash src="img/splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" /> 
+    <gap:splash src="res/android/res-long-port-xhdpi/default.png" gap:platform="android" gap:density="xhdpi" /> 
         
     <!-- Windows Phone 7 480x800 -->
     <gap:splash src="img/splash/winphone/splash.jpg" gap:platform="winphone" /> 
