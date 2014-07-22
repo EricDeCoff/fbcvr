@@ -87,7 +87,7 @@ require(['require','bootstrap','jquery','underscore','fastclick','defaults',
             $('#btnVimeo').on('click',function(e){
                 e.preventDefault();
                 windows.load(e.currentTarget,
-                'http://vimeo.com/fbcvr/videos');
+                'http://vimeo.com/m/fbcvr/videos');
             });
 
             $('#btnFacebook').on('click',function(e){
