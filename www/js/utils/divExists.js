@@ -1,14 +1,1 @@
-/* jshint strict: false, -W117 */
-define(function(){
-    return {
-        name:'divExists',
-        exists:null,
-        check:function($id){ 
-            this.exists = document.getElementById($id);
-            
-            if (this.exists === null) return false;
-            
-            return true;
-        }
-    };
-});
+define([],function(){return{name:"divExists",exists:null,check:function(e){return this.exists=document.getElementById(e),null===this.exists?!1:!0}}});

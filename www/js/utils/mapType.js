@@ -1,17 +1,1 @@
-/* jshint strict: false, -W117 */
-define(['defaults','utils/deviceType'],function(defaults,deviceType){
-    return {
-        name:'mapType',
-        get:function(){ 
-            switch(deviceType.get()){
-                    
-                    case "Android":
-                        console.log(this.name+': (Android)');
-                        return "geo:0,0?q='"+defaults.address()+"'";
-                    default:
-                        console.log(this.name+': (default)');                    
-                        return 'http://maps.google.com/maps?q='+defaults.address();
-            }
-        }
-    };
-});
+define(["defaults","utils/deviceType"],function(e,t){return{name:"mapType",get:function(){switch(t.get()){case"Android":return console.log(this.name+": (Android)"),"geo:0,0?q='"+e.address()+"'";default:return console.log(this.name+": (default)"),"http://maps.google.com/maps?q="+e.address()}}}});
