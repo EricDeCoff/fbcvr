@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
 		id = "com.ericdecoff.phonegap3.bs3.fbcvr"
 		version = "3.5.3"
-		versionCode = "350">
+		versionCode = "353">
 
     <name>FBCVR</name>
 
