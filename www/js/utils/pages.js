@@ -1,1 +1,0 @@
-define([],function(){return{name:"pages",show:function(e){switch(console.log("showPage("+e+")"),$("div[data-page]").hide(),e){case"info":app.setDeviceInfo();break;case"no-internet":}$('div[data-page="'+e+'"]').show()}}});

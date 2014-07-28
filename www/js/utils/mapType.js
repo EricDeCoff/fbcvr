@@ -1,1 +1,0 @@
-define(["defaults","utils/deviceType"],function(e,t){return{name:"mapType",get:function(){switch(t.get()){case"Android":return console.log(this.name+": (Android)"),"geo:0,0?q='"+e.address()+"'";default:return console.log(this.name+": (default)"),"http://maps.google.com/maps?q="+e.address()}}}});

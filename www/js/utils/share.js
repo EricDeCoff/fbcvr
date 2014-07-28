@@ -1,1 +1,0 @@
-define(["utils/pages","utils/ajaxStaff"],function(i){var e={name:"share",initialize:function(){console.log(this.name+":initialize"),$("#share").load("./pages/share.html",function(){$(this).trigger("create")})},show:function(){i.show("share")}};return e});

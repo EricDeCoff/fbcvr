@@ -1,1 +1,0 @@
-define(["utils/mapType"],function(e){return{name:"directions",get:function(){console.log(this.name+":get");var n=null,o=e.get();console.log(this.name+":_geo:="+o),"geo:"===o.substr(0,4)?window.location.href=o:n=window.open(encodeURI(o),"_blank","location=no,EnableViewPortScale=yes")}}});
