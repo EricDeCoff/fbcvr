@@ -2,7 +2,7 @@
     <widget xmlns = "http://www.w3.org/ns/widgets" 
         xmlns:gap = "http://phonegap.com/ns/1.0"
 		id = "com.ericdecoff.phonegap3.bs3.fbcvr"
-		version = "3.5.2"
+		version = "3.5.3"
 		versionCode = "350">
 
     <name>FBCVR</name>
@@ -79,7 +79,8 @@
     <preference name="phonegap-version" value="3.5.0" />
     <preference name="orientation" value="default" />
     <preference name="fullscreen" value="true" /> <!-- remove the upper bar on iOS and Android -->
-        
+    <preference name="windowSoftInputMode" value="stateHidden" />
+
     <!-- iOS PREFERENCES -->
     
     <preference name="target-device" value="universal" />
