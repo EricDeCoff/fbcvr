@@ -17,7 +17,7 @@
         
     <icon src="icon.png" /> <!-- default 512 pixels -->
     
-    <!-- iOS6 --->
+    <!-- iOS6 -->
     <icon src="Resources/iphone/appicon.png" gap:platform="ios" width="57" height="57" />
     <icon src="Resources/iphone/appicon-72.png" gap:platform="ios" width="72" height="72" />
     <icon src="Resources/iphone/appicon@2x.png" gap:platform="ios" width="114" height="114" />
