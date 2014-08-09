@@ -18,14 +18,14 @@
     <icon src="icon.png" /> <!-- default 512 pixels -->
     
     <!-- iOS6 --->
-    <icon src="img/icons/ios/icon57.png" gap:platform="ios" width="57" height="57" />
-    <icon src="img/icons/ios/icon72.png" gap:platform="ios" width="72" height="72" />
-    <icon src="img/icons/ios/icon114.png" gap:platform="ios" width="114" height="114" />
-    <icon src="img/icons/ios/icon144.png" gap:platform="ios" width="144" height="144" />    
+    <icon src="Resources/iphone/appicon.png" gap:platform="ios" width="57" height="57" />
+    <icon src="Resources/iphone/appicon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="Resources/iphone/appicon@2x.png" gap:platform="ios" width="114" height="114" />
+    <icon src="Resources/iphone/appicon-72@2x.png" gap:platform="ios" width="144" height="144" />    
     <!-- iOS7 -->
-    <icon src="img/icons/ios/icon76.png" gap:platform="ios" width="76" height="76" />
-    <icon src="img/icons/ios/icon120.png" gap:platform="ios" width="120" height="120" />
-    <icon src="img/icons/ios/icon152.png" gap:platform="ios" width="152" height="152" />
+    <icon src="Resources/iphone/appicon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="Resources/iphone/appicon-60@2x.png" gap:platform="ios" width="120" height="120" />
+    <icon src="Resources/iphone/appicon-76@2x.png" gap:platform="ios" width="152" height="152" />
         
     <icon src="res/android/ldpi/icon.png" gap:platform="android" gap:density="ldpi" />
     <icon src="res/android/mdpi/icon.png" gap:platform="android" gap:density="mdpi" /> 
@@ -42,18 +42,19 @@
     <gap:splash src="splash.png" />
     
     <!-- non retina -->
-    <gap:splash src="img/splash/ios/splash320x480.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="Resources/iphone/Default.png" gap:platform="ios" width="320" height="480" />
     <!-- retina 4 -->
-    <gap:splash src="img/splash/ios/splash640x960.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="Resources/iphone/Default@2x.png" gap:platform="ios" width="640" height="960" />
     <!-- retina 5+ -->
-    <gap:splash src="img/splash/ios/splash640x1136.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="Resources/iphone/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
         
     <!-- iPad non retina -->    
-    <gap:splash src="img/splash/ios/splash1024x768.png" gap:platform="ios" width="1024" height="768" />
-    <gap:splash src="img/splash/ios/splash768x1024.png" gap:platform="ios" width="768" height="1024" />
+    <gap:splash src="Resources/iphone/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
+    <gap:splash src="Resources/iphone/Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
     <!-- iPad Retina -->
-    <gap:splash src="img/splash/ios/splash2048x1496.png" gap:platform="ios" width="2048" height="1496" />
-    <gap:splash src="img/splash/ios/splash1536x2008.png" gap:platform="ios" width="1536" height="2008" />
+    <gap:splash src="Resources/iphone/Default-Landscape@2x.png" gap:platform="ios" 
+                width="2048" height="1496" />
+    <gap:splash src="Resources/iphone/Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2008" />
         
     <!-- android splash -->    
     <!-- 200x320 -->        
