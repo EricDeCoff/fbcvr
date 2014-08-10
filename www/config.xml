@@ -12,7 +12,12 @@
     </description>
 
     <author href="http://fbcvr.com" email="ericdecoff@gmail.com">Eric DeCoff</author>
-        
+
+	<!-- Plugins -->
+
+	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />        
+
     <!-- ICONS -->
         
     <icon src="icon.png" /> <!-- default 512 pixels -->
