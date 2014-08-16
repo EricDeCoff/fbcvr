@@ -45,6 +45,9 @@ js/utils/mapType.js
 js/utils/directions.js
 js/utils/navbar-top.js
 js/utils/container.js
+js/utils/mobile.js
+js/utils/callable.js
+js/utils/phone.js
 js/utils/home.js
 js/utils/cssLoader.js
 js/utils/error-404.js
