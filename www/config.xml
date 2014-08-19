@@ -2,8 +2,8 @@
     <widget xmlns = "http://www.w3.org/ns/widgets" 
         xmlns:gap = "http://phonegap.com/ns/1.0"
 		id = "com.ericdecoff.fbcvr"
-		version = "3.5.3"
-		versionCode = "353">
+		version = "3.5.4"
+		versionCode = "354">
 
     <name>FBCVR</name>
 
