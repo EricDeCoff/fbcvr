@@ -47,9 +47,10 @@ js/utils/navbar-top.js
 js/utils/container.js
 js/utils/mobile.js
 js/utils/callable.js
+js/utils/cssLoader.js
+js/utils/windows.js
 js/utils/phone.js
 js/utils/home.js
-js/utils/cssLoader.js
 js/utils/error-404.js
 js/utils/no-internet.js
 js/utils/ajax.js
@@ -62,5 +63,4 @@ js/libs/imagesloaded.pkgd.min.js
 js/utils/ajaxStaff.js
 js/utils/staff.js
 js/utils/share.js
-js/utils/windows.js
 js/app.js
